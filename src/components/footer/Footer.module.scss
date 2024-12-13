@@ -8,8 +8,42 @@
     font-family: "Mukta", sans-serif;
 }
 .footer{
+    background-color: antiquewhite;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: gray;
+    flex-direction: column;
+    padding: 40px 0;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        .componentOne{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 250px;
+                border-radius: 5px;
+            }
+        }
+        ul{
+            li{
+                a{
+                    color: black;
+                }
+            }
+        }
+
+    }
+}
+@media screen and (max-width: 910px) {
+    .footer{
+        .container{
+            flex-direction: column;
+            align-items: start;
+            gap: 40px;
+        }
+    }
 }

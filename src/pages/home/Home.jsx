@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Home.module.scss'
 import modelOne from './assets/model_3.png.webp'
+import modelTwo from './assets/model_6.png.webp'
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../../components/card/Card';
 import { getProductThunk } from '../../redux/reducers/productsSlice';
@@ -9,7 +10,7 @@ import Layout from '../../components/layout/Layout';
 const Home = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemPerPage, setItemPerPage] = useState(3);
+    const [itemPerPage, setItemPerPage] = useState(8);
 
     const lastIndexItem = currentPage * itemPerPage;
     const firstIndexItem = lastIndexItem - itemPerPage;
@@ -55,6 +56,16 @@ const Home = () => {
                     {pages && pages.map(item => {
                         return <button style={currentPage == item ? {backgroundColor: "gray"} : {backgroundColor: "black"}} onClick={() => setCurrentPage(item)}>{item}</button>
                     })}
+                </div>
+            </div>
+            <div className={styles.sectionOne}>
+                <div className={styles.containerOne}>
+                    <img src={modelTwo} alt="model" />
+                    <div className={styles.texts}>
+                        <h2>#New Summer Collection 2019</h2>
+                        <h1>NEW SHOES</h1>
+                        <button>SHOP NOW</button>
+                    </div>
                 </div>
             </div>
         </Layout>
